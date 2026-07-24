@@ -96,10 +96,10 @@ function OrbitItem({ item, index, totalItems, path, itemSize, rotation, progress
 }
 
 export default function OrbitImages({
-    images = [],
+    images = /** @type {string[]} */ ([]),
     altPrefix = 'Orbiting image',
     shape = 'ellipse',
-    customPath,
+    customPath = /** @type {string} */ (''),
     baseWidth = 1400,
     radiusX = 700,
     radiusY = 170,
@@ -119,7 +119,7 @@ export default function OrbitImages({
     pathWidth = 2,
     easing = 'linear',
     paused = false,
-    centerContent,
+    centerContent = /** @type {import('react').ReactNode} */ (null),
     responsive = false,
 }) {
     const containerRef = useRef(null);
